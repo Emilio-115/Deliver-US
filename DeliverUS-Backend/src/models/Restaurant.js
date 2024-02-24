@@ -42,9 +42,10 @@ const loadModel = (sequelize, DataTypes) => {
 
     averageServiceMinutes: {
       type: DataTypes.DOUBLE,
-      get () {
-        return this.getAverageServiceTime()
+      set () {
+        this.setDataValue(this.getAverageServiceTime())
       }
+
     },
 
     email: DataTypes.STRING,
